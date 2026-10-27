@@ -21,28 +21,50 @@
   <main class="wrap">
     <section id="next" class="next" aria-live="polite" hidden></section>
 
-    <section class="subscribe">
-      <h2>סנכרון ליומן</h2>
-      <p>הוסיפו את היומן לגוגל קלנדר והוא יתעדכן אוטומטית (גוגל מרעננת יומנים חיצוניים כל כמה שעות).</p>
-      <label class="check"><input type="checkbox" id="withTraffic"> לכלול גם חלונות עומס (הגעה ויציאה) כאירועים נפרדים</label>
-      <div class="buttons">
-        <a id="gcal" class="btn primary" target="_blank" rel="noopener">הוספה לגוגל קלנדר</a>
-        <button id="copyIcs" class="btn" type="button">העתקת כתובת היומן</button>
-      </div>
-      <code id="icsUrl" class="url"></code>
-    </section>
+    <div class="sticky">
+      <nav class="tabs" role="tablist" aria-label="תצוגה">
+        <button class="tab active" role="tab" data-view="list" aria-selected="true">רשימה</button>
+        <button class="tab" role="tab" data-view="week" aria-selected="false">שבוע</button>
+        <button class="tab" role="tab" data-view="month" aria-selected="false">חודש</button>
+      </nav>
+      <nav class="filters" aria-label="סינון לפי סוג">
+        <button class="chip active" data-cat="">הכל</button>
+        <button class="chip" data-cat="sports">ספורט</button>
+        <button class="chip" data-cat="concert">הופעות</button>
+        <button class="chip" data-cat="show">מופעים</button>
+        <button class="chip" data-cat="conference">כנסים</button>
+      </nav>
+    </div>
 
-    <nav class="filters" aria-label="סינון לפי סוג">
-      <button class="chip active" data-cat="">הכל</button>
-      <button class="chip" data-cat="sports">ספורט</button>
-      <button class="chip" data-cat="concert">הופעות</button>
-      <button class="chip" data-cat="show">מופעים</button>
-      <button class="chip" data-cat="conference">כנסים</button>
-    </nav>
-
-    <section id="list" class="list" aria-live="polite">
+    <section id="view-list" class="list" aria-live="polite">
       <p class="muted">טוען אירועים…</p>
     </section>
+
+    <section id="view-week" class="cal" hidden>
+      <div class="cal-nav">
+        <button class="btn small" type="button" data-step="-1" aria-label="השבוע הקודם">→</button>
+        <h2 class="cal-title"></h2>
+        <button class="btn small" type="button" data-step="1" aria-label="השבוע הבא">←</button>
+      </div>
+      <div class="week-days"></div>
+    </section>
+
+    <section id="view-month" class="cal" hidden>
+      <div class="cal-nav">
+        <button class="btn small" type="button" data-step="-1" aria-label="החודש הקודם">→</button>
+        <h2 class="cal-title"></h2>
+        <button class="btn small" type="button" data-step="1" aria-label="החודש הבא">←</button>
+      </div>
+      <div class="month-grid" role="grid"></div>
+      <div class="legend">
+        <span><i class="dot lvl-high"></i>עומס כבד</span>
+        <span><i class="dot lvl-medium"></i>עומס בינוני</span>
+        <span><i class="dot lvl-low"></i>עומס קל</span>
+      </div>
+      <div class="day-detail"></div>
+    </section>
+
+    <p class="cal-link"><a href="/api#calendar">📅 סנכרון לגוגל קלנדר ולאפליקציות יומן</a></p>
 
     <section class="sources">
       <h2>מקורות המידע</h2>
@@ -52,7 +74,7 @@
   </main>
 
   <footer class="wrap foot">
-    <a href="/api">API פתוח</a> ·
+    <a href="/api">API פתוח וסנכרון ליומן</a> ·
     <a href="/calendar.ics">iCal</a> ·
     <a href="https://github.com/zomer-g/yad-eliyahu-events" target="_blank" rel="noopener">קוד מקור</a>
     <p id="updated" class="muted"></p>

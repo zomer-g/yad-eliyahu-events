@@ -19,6 +19,7 @@ const STATIC = {
   '/index.html': ['index.html', 'text/html; charset=utf-8'],
   '/api': ['api.html', 'text/html; charset=utf-8'],
   '/app.js': ['app.js', 'text/javascript; charset=utf-8'],
+  '/api.js': ['api.js', 'text/javascript; charset=utf-8'],
   '/style.css': ['style.css', 'text/css; charset=utf-8'],
   '/icon.svg': ['icon.svg', 'image/svg+xml'],
   '/manifest.webmanifest': ['manifest.webmanifest', 'application/manifest+json'],
@@ -52,7 +53,7 @@ function sendJson(res, status, obj, extra = {}) {
   send(res, status, JSON.stringify(obj, null, 2), {
     'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*',
-    'Cache-Control': 'public, max-age=300',
+    'Cache-Control': 'public, max-age=120',
     ...extra,
   });
 }

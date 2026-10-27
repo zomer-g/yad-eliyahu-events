@@ -3,15 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>API אירועים ביד אליהו</title>
+  <title>API ויומן · אירועים ביד אליהו</title>
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <header class="top"><div class="wrap"><h1>API פתוח</h1><p class="sub">קריאה בלבד · ללא הרשמה · JSON · CORS פתוח · עד 120 בקשות לדקה</p></div></header>
+  <header class="top"><div class="wrap"><h1>API ויומן</h1><p class="sub">סנכרון ליומן · API פתוח, ללא הרשמה · JSON · CORS פתוח</p></div></header>
   <main class="wrap">
+    <p><a href="/">← חזרה לאירועים</a></p>
+
+    <section class="subscribe" id="calendar">
+      <h2>סנכרון ליומן</h2>
+      <p>הוסיפו את היומן לגוגל קלנדר והוא יתעדכן אוטומטית (גוגל מרעננת יומנים חיצוניים כל כמה שעות). אפשר להשתמש באותה כתובת גם ב-Outlook וביומן של אפל.</p>
+      <label class="check"><input type="checkbox" id="withTraffic"> לכלול גם חלונות עומס (הגעה ויציאה) כאירועים נפרדים</label>
+      <label class="check">סוג אירועים:
+        <select id="calCategory">
+          <option value="">הכל</option>
+          <option value="sports">ספורט</option>
+          <option value="concert">הופעות</option>
+          <option value="show">מופעים</option>
+          <option value="conference">כנסים</option>
+        </select>
+      </label>
+      <div class="buttons">
+        <a id="gcal" class="btn primary" target="_blank" rel="noopener">הוספה לגוגל קלנדר</a>
+        <a id="webcal" class="btn">פתיחה באפליקציית יומן</a>
+        <button id="copyIcs" class="btn" type="button">העתקת כתובת היומן</button>
+      </div>
+      <code id="icsUrl" class="url"></code>
+    </section>
+
     <section class="subscribe">
       <h2>נקודות קצה</h2>
+      <p>קריאה בלבד, עד 120 בקשות לדקה לכתובת IP.</p>
       <ul>
         <li><a href="/api/events"><code>GET /api/events</code></a> · אירועים קרובים. פרמטרים: <code>from</code>, <code>to</code> (ISO 8601), <code>category</code> (sports / concert / show / conference / other), <code>include_past=true</code>, <code>limit</code> (עד 500).</li>
         <li><code>GET /api/events/{id}</code> · אירוע בודד.</li>
@@ -25,9 +49,9 @@
     <section class="subscribe" dir="ltr" lang="en">
       <h2>Example</h2>
       <pre class="url">curl "https://&lt;host&gt;/api/events?category=sports&amp;from=2026-11-01&amp;to=2026-12-31"</pre>
-      <p>Each event includes <code>traffic.level</code> (low/medium/high), <code>traffic.expectedAttendance</code>, <code>traffic.arrivalWindow</code>, <code>traffic.departureWindow</code> and the list of <code>sources</code> it was found in. Attendance and traffic windows are estimates.</p>
+      <p>Each event includes <code>traffic.level</code> (low/medium/high), <code>traffic.expectedAttendance</code>, <code>traffic.arrivalWindow</code>, <code>traffic.departureWindow</code>, <code>confirmed</code>, <code>timeTbd</code> and the list of <code>sources</code> it was found in. Attendance and traffic windows are estimates.</p>
     </section>
-    <p><a href="/">← חזרה לאתר</a></p>
   </main>
+  <script src="/api.js"></script>
 </body>
 </html>

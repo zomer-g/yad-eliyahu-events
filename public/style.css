@@ -79,6 +79,10 @@ h2 { font-size: 1.1rem; margin: 0 0 8px; }
 .subscribe p { margin: 0 0 8px; color: var(--muted); font-size: .92rem; }
 .check { display: flex; gap: 8px; align-items: center; font-size: .92rem; margin: 8px 0; }
 .check input { width: 20px; height: 20px; }
+.check select {
+  min-height: 40px; padding: 4px 10px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit;
+}
 .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
 .url { display: block; direction: ltr; text-align: left; font-size: .78rem; color: var(--muted); overflow-wrap: anywhere; }
 
@@ -92,11 +96,74 @@ h2 { font-size: 1.1rem; margin: 0 0 8px; }
 .btn.primary { background: var(--brand-2); border-color: var(--brand-2); color: #fff; }
 .btn.small { min-height: 36px; padding: 4px 12px; font-size: .88rem; }
 
+.sticky { position: sticky; top: 0; background: var(--bg); z-index: 2; padding-top: 8px; }
+
+.tabs {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+  padding: 4px; border-radius: 12px; background: var(--card); border: 1px solid var(--line);
+}
+.tab {
+  min-height: 40px; border: 0; border-radius: 9px; background: transparent;
+  color: var(--text); font: inherit; font-weight: 600; cursor: pointer;
+}
+.tab.active { background: var(--brand-2); color: #fff; }
+
 .filters {
-  display: flex; gap: 8px; overflow-x: auto; padding: 4px 0 8px;
-  position: sticky; top: 0; background: var(--bg); z-index: 2;
+  display: flex; gap: 8px; overflow-x: auto; padding: 8px 0;
   scrollbar-width: none;
 }
+
+.cal-link { margin: 12px 0 0; font-size: .92rem; }
+
+.cal-nav { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 12px 0; }
+.cal-nav .cal-title { margin: 0; text-align: center; flex: 1; }
+.cal-nav .btn { min-width: 44px; font-size: 1.1rem; }
+
+.week-day { margin-bottom: 12px; }
+.week-day-title { font-size: .98rem; margin: 0 0 6px; color: var(--muted); }
+.week-day.today .week-day-title { color: var(--high); }
+.week-day.empty { padding: 4px 0; border-bottom: 1px solid var(--line); }
+.week-day.empty .week-day-title { display: inline; margin-inline-end: 8px; }
+.week-day.empty p { display: inline; margin: 0; }
+
+.month-grid {
+  display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px;
+}
+.month-head { text-align: center; font-size: .8rem; font-weight: 700; color: var(--muted); padding: 4px 0; }
+.month-cell {
+  min-height: 56px; padding: 4px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--card); color: var(--text);
+  font: inherit; text-align: start; cursor: pointer;
+  display: flex; flex-direction: column; gap: 2px; overflow: hidden;
+}
+.month-cell.other { opacity: .4; }
+.month-cell.today .num { background: var(--brand-2); color: #fff; border-radius: 999px; padding: 0 6px; }
+.month-cell.selected { outline: 2px solid var(--brand-2); outline-offset: -1px; }
+.month-cell.has.lvl-high { background: var(--high-bg); }
+.month-cell.has.lvl-medium { background: var(--medium-bg); }
+.month-cell.has.lvl-low { background: var(--low-bg); }
+.month-cell .num { font-weight: 700; font-size: .85rem; align-self: flex-start; }
+.month-cell .items { display: none; }
+.month-cell .item { display: block; font-size: .72rem; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.month-cell .item.lvl-high { color: var(--high); }
+.month-cell .item.lvl-medium { color: var(--medium); }
+.month-cell .item.lvl-low { color: var(--low); }
+.month-cell .dots { display: flex; gap: 3px; flex-wrap: wrap; }
+.month-cell .dots .dot { width: 8px; height: 8px; margin: 0; }
+
+@media (min-width: 640px) {
+  .month-cell { min-height: 84px; }
+  .month-cell .items { display: block; }
+  .month-cell .dots { display: none; }
+}
+
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: .82rem; color: var(--muted); margin: 8px 0 4px; }
+.legend .dot { width: 9px; height: 9px; margin-inline-end: 4px; vertical-align: middle; }
+.dot.lvl-high { background: var(--high); }
+.dot.lvl-medium { background: var(--medium); }
+.dot.lvl-low { background: var(--low); }
+
+.day-detail { margin-top: 12px; }
 .chip {
   flex: 0 0 auto; min-height: 40px; padding: 6px 16px;
   border-radius: 999px; border: 1px solid var(--line);
@@ -114,7 +181,7 @@ h2 { font-size: 1.1rem; margin: 0 0 8px; }
   border-radius: var(--radius);
   padding: 12px;
   margin-bottom: 10px;
-  scroll-margin-top: 64px;
+  scroll-margin-top: 120px;
 }
 .card.focus { outline: 3px solid var(--brand-2); }
 .card.cancelled { opacity: .6; }

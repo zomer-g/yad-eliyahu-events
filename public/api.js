@@ -1,0 +1,31 @@
+'use strict';
+
+(function () {
+  const traffic = document.getElementById('withTraffic');
+  const category = document.getElementById('calCategory');
+
+  function update() {
+    const q = new URLSearchParams();
+    if (traffic.checked) q.set('traffic', '1');
+    if (category.value) q.set('category', category.value);
+    const qs = q.toString();
+    const https = `${location.origin}/calendar.ics${qs ? `?${qs}` : ''}`;
+    const webcal = https.replace(/^https?:/, 'webcal:');
+    document.getElementById('icsUrl').textContent = https;
+    document.getElementById('gcal').href = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(webcal)}`;
+    document.getElementById('webcal').href = webcal;
+  }
+
+  traffic.addEventListener('change', update);
+  category.addEventListener('change', update);
+  update();
+
+  document.getElementById('copyIcs').addEventListener('click', async (e) => {
+    try {
+      await navigator.clipboard.writeText(document.getElementById('icsUrl').textContent);
+      e.target.textContent = 'הועתק ✓';
+    } catch (err) {
+      e.target.textContent = 'העתיקו ידנית מהשורה למטה';
+    }
+  });
+})();
