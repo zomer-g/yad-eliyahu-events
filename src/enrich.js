@@ -46,7 +46,8 @@ function enrich(ev) {
   const levelText = { high: 'עומס כבד', medium: 'עומס בינוני', low: 'עומס קל' }[level];
   const advice = ev.cancelled
     ? 'האירוע בוטל לפי המקור.'
-    : `${levelText}. מומלץ להימנע מהגעה לאזור יגאל אלון / יד אליהו בין ${fmt.format(arrival.from)} ל-${fmt.format(arrival.to)}, ובין ${fmt.format(departure.from)} ל-${fmt.format(departure.to)} (פיזור הקהל).`;
+    : `${levelText}. מומלץ להימנע מהגעה לאזור יגאל אלון / יד אליהו בין ${fmt.format(arrival.from)} ל-${fmt.format(arrival.to)}, ובין ${fmt.format(departure.from)} ל-${fmt.format(departure.to)} (פיזור הקהל).`
+      + (ev.confirmed === false ? ' המועד עדיין לא סופי, כדאי לבדוק שוב קרוב לאירוע.' : '');
 
   return {
     ...ev,

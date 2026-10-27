@@ -1,0 +1,77 @@
+[
+ {
+  "id": 1501847,
+  "date": "2026-11-01T20:55:00",
+  "date_gmt": "2026-11-02T20:00:00",
+  "title": {
+   "rendered": "מכבי תל אביב Rapyd — הפועל תל אביב IBI"
+  },
+  "link": "https://ibasketball.co.il/match/779414/",
+  "venues": [
+   5348
+  ],
+  "leagues": [
+   119893
+  ]
+ },
+ {
+  "id": 1501885,
+  "date": "2026-11-14T20:55:00",
+  "date_gmt": "2026-11-16T20:00:00",
+  "title": {
+   "rendered": "מכבי תל אביב Rapyd — הפועל ירושלים מידטאו"
+  },
+  "link": "https://ibasketball.co.il/match/779518/",
+  "venues": [
+   5348
+  ],
+  "leagues": [
+   119893
+  ]
+ },
+ {
+  "id": 1501823,
+  "date": "2026-11-21T20:55:00",
+  "date_gmt": "2026-11-22T20:00:00",
+  "title": {
+   "rendered": "מכבי תל אביב Rapyd — הפועל חולון קבוצת נתנאל"
+  },
+  "link": "https://ibasketball.co.il/match/779344/",
+  "venues": [
+   5348
+  ],
+  "leagues": [
+   119893
+  ]
+ },
+ {
+  "id": 1501837,
+  "date": "2026-12-28T20:00:00",
+  "date_gmt": "2026-12-28T20:00:00",
+  "title": {
+   "rendered": "מכבי תל אביב Rapyd — הפועל נס ציונה חי מו"
+  },
+  "link": "https://ibasketball.co.il/match/779386/",
+  "venues": [
+   5348
+  ],
+  "leagues": [
+   119893
+  ]
+ },
+ {
+  "id": 999,
+  "date": "2026-11-01T20:55:00",
+  "date_gmt": "2026-11-02T20:00:00",
+  "title": {
+   "rendered": "מכבי תל אביב Rapyd — הפועל תל אביב IBI"
+  },
+  "link": "https://ibasketball.co.il/match/779414/",
+  "venues": [
+   1
+  ],
+  "leagues": [
+   119893
+  ]
+ }
+]

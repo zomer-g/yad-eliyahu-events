@@ -6,6 +6,31 @@ const { israelDay, shortHash } = require('./util');
 // Two listings on the same day that start within this window describe the same event:
 // the arena hosts one event at a time.
 const SAME_EVENT_WINDOW_MS = 150 * 60000;
+// Sources publish provisional dates for future rounds that can differ by a day or two,
+// so games between the same teams this close together are one game.
+const SAME_GAME_WINDOW_MS = 3 * 86400000;
+const AGREE_MS = 30 * 60000;
+
+const TEAM_STOPWORDS = new Set(['מכבי', 'הפועל', 'תל', 'אביב', 'תא', 'rapyd', 'ראפיד', 'נגד', 'עירוני', 'בני', 'ibi', 'קבוצת', 'vs', 'בכדורסל']);
+
+// Distinctive words of a game title, used to recognise the same game across sources.
+function teamTokens(title) {
+  return new Set(String(title || '').toLowerCase()
+    .replace(/["'”“׳״`.,—–\-/()]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w.length >= 2 && !TEAM_STOPWORDS.has(w)));
+}
+
+function sameGame(group, row) {
+  if (!group.sports || !isSports(row)) return false;
+  if (Math.abs(group.start - new Date(row.data.start)) > SAME_GAME_WINDOW_MS) return false;
+  for (const t of teamTokens(row.data.title)) if (group.tokens.has(t)) return true;
+  return false;
+}
+
+function isSports(row) {
+  return row.data.category === 'sports';
+}
 
 // rows: [{ source, data, firstSeen, lastSeen }], sources: ordered list of source definitions (priority order).
 function mergeEvents(rows, sources) {
@@ -19,9 +44,16 @@ function mergeEvents(rows, sources) {
   for (const row of sorted) {
     const start = new Date(row.data.start);
     const day = israelDay(start);
-    const g = groups.find((x) => x.day === day && Math.abs(x.start - start) <= SAME_EVENT_WINDOW_MS);
-    if (g) g.rows.push(row);
-    else groups.push({ day, start, rows: [row] });
+    const g = groups.find((x) => (x.day === day && Math.abs(x.start - start) <= SAME_EVENT_WINDOW_MS) || sameGame(x, row));
+    if (g) {
+      g.rows.push(row);
+      if (isSports(row)) {
+        g.sports = true;
+        for (const t of teamTokens(row.data.title)) g.tokens.add(t);
+      }
+    } else {
+      groups.push({ day, start, rows: [row], sports: isSports(row), tokens: isSports(row) ? teamTokens(row.data.title) : new Set() });
+    }
   }
 
   return groups.map(({ rows: rs }) => {
@@ -29,17 +61,24 @@ function mergeEvents(rows, sources) {
     const primary = ranked[0];
     const d = primary.data;
     const pick = (field) => (ranked.find((r) => r.data[field]) || {}).data?.[field] ?? null;
+    // Take the time from the best source that publishes a real hour, not a placeholder.
+    const timed = ranked.find((r) => !r.data.timeTbd) || primary;
+    const startMs = new Date(timed.data.start).getTime();
+    const agree = ranked.every((r) => (r.data.timeTbd
+      ? israelDay(new Date(r.data.start)) === israelDay(new Date(startMs))
+      : Math.abs(new Date(r.data.start).getTime() - startMs) <= AGREE_MS));
     const merged = {
       id: shortHash(`${primary.source}|${d.sourceEventId}`),
       title: d.title,
-      start: d.start,
+      start: timed.data.start,
+      timeTbd: !!timed.data.timeTbd,
       end: pick('end'),
       category: pick('category'),
       description: pick('description') || '',
       image: pick('image'),
       cancelled: ranked.every((r) => r.data.cancelled),
       postponed: ranked.some((r) => r.data.postponed),
-      confirmed: d.confirmed !== false,
+      confirmed: timed.data.confirmed !== false && !timed.data.timeTbd && agree,
       attendance: pick('attendance'),
       extra: d.extra || {},
       firstSeen: rs.map((r) => r.firstSeen).sort()[0],

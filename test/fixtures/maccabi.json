@@ -1,0 +1,362 @@
+[
+ {
+  "id": 537892,
+  "date": "2026-10-27",
+  "dateDisplay": "שלישי | 27 באוקטובר | 21:00",
+  "timestamp": 1793127600,
+  "month": "אוקטובר",
+  "season": "2027",
+  "league": "יורוליג",
+  "leagueId": 299311,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "חוץ",
+  "team1": {
+   "name": "הכוכב האדום",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/team_406185_d2eef4a8-62df-4fdd-9076-276004268515.png",
+   "id": 406185
+  },
+  "team2": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 406383
+  },
+  "venue": "בלגרד ארנה",
+  "round": "",
+  "phase": "8",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/crvena-zvezda-meridianbet-belgrade-27-10-2026/",
+  "flyTickets": {
+   "show": "none",
+   "link": null,
+   "text": ""
+  }
+ },
+ {
+  "id": 537890,
+  "date": "2026-10-29",
+  "dateDisplay": "חמישי | 29 באוקטובר | 21:05",
+  "timestamp": 1793300700,
+  "month": "אוקטובר",
+  "season": "2027",
+  "league": "יורוליג",
+  "leagueId": 299311,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 406383
+  },
+  "team2": {
+   "name": "פריז",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/team_406157_a033e5b3-0de7-48a3-98d9-d9a4b9df1f39.png",
+   "id": 406157
+  },
+  "venue": "אולם אלכסנדר ניקוליץ’",
+  "round": "",
+  "phase": "9",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/paris-basketball-29-10-2026/",
+  "flyTickets": {
+   "show": "custom",
+   "link": "https://tickets.maccabitickets.co.il/event/maccabi-rapyd-tel-aviv-paris-basketball-5bqm3k",
+   "text": "כרטיסים"
+  }
+ },
+ {
+  "id": 540024,
+  "date": "2026-11-01",
+  "dateDisplay": "ראשון | 1 בנובמבר | 20:55",
+  "timestamp": 1793559300,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "ליגת העל",
+  "leagueId": 299297,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 405395
+  },
+  "team2": {
+   "name": "הפועל IBI תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/08/logo_hapoelta-1.png",
+   "id": 405392
+  },
+  "venue": "היכל מנורה מבטחים, ת”א",
+  "round": "",
+  "phase": "4",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/%d7%94%d7%a4%d7%95%d7%a2%d7%9c-ibi-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-01-11-2026/",
+  "flyTickets": {
+   "show": "none",
+   "link": null,
+   "text": ""
+  }
+ },
+ {
+  "id": 537888,
+  "date": "2026-11-06",
+  "dateDisplay": "שישי | 6 בנובמבר | 21:45",
+  "timestamp": 1793994300,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "יורוליג",
+  "leagueId": 299311,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "חוץ",
+  "team1": {
+   "name": "פרטיזן בלגרד",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/team_406103_2681304e-77dd-4331-88b1-683078c0fb49.png",
+   "id": 406103
+  },
+  "team2": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 406383
+  },
+  "venue": "בלגרד ארנה",
+  "round": "",
+  "phase": "10",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/partizan-mozzart-bet-belgrade-06-11-2026/",
+  "flyTickets": {
+   "show": "none",
+   "link": null,
+   "text": ""
+  }
+ },
+ {
+  "id": 548363,
+  "date": "2026-11-09",
+  "dateDisplay": "שני | 9 בנובמבר | 20:55",
+  "timestamp": 1794250500,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "גביע הליגה",
+  "leagueId": 299299,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 405395
+  },
+  "team2": {
+   "name": "הפועל IBI תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/08/logo_hapoelta-1.png",
+   "id": 405392
+  },
+  "venue": "היכל טוטו, חולון",
+  "round": "",
+  "phase": "7",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/%d7%94%d7%a4%d7%95%d7%a2%d7%9c-ibi-%d7%aa%d7%9c-%d7%90%d7%91%d7%99%d7%91-09-11-2026/",
+  "flyTickets": {
+   "show": "none",
+   "link": null,
+   "text": ""
+  }
+ },
+ {
+  "id": 537886,
+  "date": "2026-11-12",
+  "dateDisplay": "חמישי | 12 בנובמבר | 21:05",
+  "timestamp": 1794510300,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "יורוליג",
+  "leagueId": 299311,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 406383
+  },
+  "team2": {
+   "name": "הפועל IBI תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/08/logo_hapoelta-1.png",
+   "id": 405392
+  },
+  "venue": "אולם אלכסנדר ניקוליץ’",
+  "round": "",
+  "phase": "11",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/hapoel-ibi-tel-aviv-12-11-2026/",
+  "flyTickets": {
+   "show": "none",
+   "link": null,
+   "text": ""
+  }
+ },
+ {
+  "id": 540017,
+  "date": "2026-11-14",
+  "dateDisplay": "שבת | 14 בנובמבר | 20:55",
+  "timestamp": 1794682500,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "ליגת העל",
+  "leagueId": 299297,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 405395
+  },
+  "team2": {
+   "name": "הפועל מידטאון י-ם",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/08/logo_yam-1.png",
+   "id": 405404
+  },
+  "venue": "היכל מנורה מבטחים, ת”א",
+  "round": "",
+  "phase": "6",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/%d7%94%d7%a4%d7%95%d7%a2%d7%9c-%d7%9e%d7%99%d7%93%d7%98%d7%90%d7%95%d7%9f-%d7%99-%d7%9d-15-11-2026/",
+  "flyTickets": {
+   "show": "none",
+   "link": null,
+   "text": ""
+  }
+ },
+ {
+  "id": 537884,
+  "date": "2026-11-17",
+  "dateDisplay": "שלישי | 17 בנובמבר | 19:00",
+  "timestamp": 1794934800,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "יורוליג",
+  "leagueId": 299311,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 406383
+  },
+  "team2": {
+   "name": "אולימפיאקוס",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/team_406038_789423ac-3cdf-4b89-b11c-b458aa5f59a6.png",
+   "id": 406038
+  },
+  "venue": "אולם אלכסנדר ניקוליץ’",
+  "round": "",
+  "phase": "12",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/olympiacos-piraeus-17-11-2026/",
+  "flyTickets": {
+   "show": "custom",
+   "link": "",
+   "text": "כרטיסים"
+  }
+ },
+ {
+  "id": 537882,
+  "date": "2026-11-19",
+  "dateDisplay": "חמישי | 19 בנובמבר | 19:30",
+  "timestamp": 1795109400,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "יורוליג",
+  "leagueId": 299311,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 406383
+  },
+  "team2": {
+   "name": "דובאי",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/team_405731_1efae090-16e2-4963-ae47-4b94f249c244.png",
+   "id": 405731
+  },
+  "venue": "אולם אלכסנדר ניקוליץ’",
+  "round": "",
+  "phase": "13",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/dubai-basketball-19-11-2026/",
+  "flyTickets": {
+   "show": "custom",
+   "link": "",
+   "text": "כרטיסים"
+  }
+ },
+ {
+  "id": 540014,
+  "date": "2026-11-21",
+  "dateDisplay": "שבת | 21 בנובמבר | 20:55",
+  "timestamp": 1795287300,
+  "month": "נובמבר",
+  "season": "2027",
+  "league": "ליגת העל",
+  "leagueId": 299297,
+  "zoneName": "",
+  "zoneId": "",
+  "homeAway": "בית",
+  "team1": {
+   "name": "מכבי Rapyd תל אביב",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/maccabi_logo2026-2.png",
+   "id": 405395
+  },
+  "team2": {
+   "name": "הפועל מעוז דניאל חולון",
+   "logo": "https://maccabi.co.il/wp-content/uploads/2026/03/team_405407_HH-LOGO-2018-19_TIGER-300x300-1.png",
+   "id": 405407
+  },
+  "venue": "היכל מנורה מבטחים, ת”א",
+  "round": "",
+  "phase": "7",
+  "status": "SCHEDULED",
+  "scoreHome": "0",
+  "scoreAway": "0",
+  "broadcasts": [],
+  "link": "https://maccabi.co.il/games/%d7%94%d7%a4%d7%95%d7%a2%d7%9c-%d7%9e%d7%a2%d7%95%d7%96-%d7%93%d7%a0%d7%99%d7%90%d7%9c-%d7%97%d7%95%d7%9c%d7%95%d7%9f-22-11-2026/",
+  "flyTickets": {
+   "show": "custom",
+   "link": " https://tickets.maccabitickets.co.il/event/--9g0uxz",
+   "text": "כרטיסים"
+  }
+ }
+]

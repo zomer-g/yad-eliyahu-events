@@ -20,7 +20,8 @@ module.exports = function openapi(baseUrl) {
       description: { type: 'string' },
       cancelled: { type: 'boolean' },
       postponed: { type: 'boolean' },
-      confirmed: { type: 'boolean', description: 'False when the source marks the date/time as not final' },
+      confirmed: { type: 'boolean', description: 'False when the date/time is provisional or the sources disagree on it' },
+      timeTbd: { type: 'boolean', description: 'True when no source publishes the hour yet; traffic windows then assume the placeholder time' },
       firstSeen: { type: 'string', format: 'date-time' },
       traffic: {
         type: 'object',

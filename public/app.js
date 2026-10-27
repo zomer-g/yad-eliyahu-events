@@ -72,7 +72,7 @@
       !ev.confirmed && el('span', { class: 'badge warn' }, 'מועד לא סופי'),
     ];
     return el('article', { class: `card${ev.cancelled ? ' cancelled' : ''}`, id: `event-${ev.id}` },
-      el('div', { class: 'time' }, timeFmt.format(start)),
+      el('div', { class: 'time' }, ev.timeTbd ? '?' : timeFmt.format(start)),
       el('div', { class: 'body' },
         el('h3', null, ev.title),
         el('div', { class: 'badges' }, badges),
