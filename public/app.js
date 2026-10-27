@@ -22,6 +22,11 @@
   let monthOffset = 0;
   let selectedDay = null;
 
+  // Sends a Google Analytics event when analytics is configured; a no-op otherwise.
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
   function el(tag, attrs, ...children) {
     const n = document.createElement(tag);
     for (const [k, v] of Object.entries(attrs || {})) {
@@ -126,7 +131,7 @@
             ` · ${s.title} · ${dateTimeFmt.format(new Date(s.start))}`))),
           el('p', { class: 'muted small' }, `נמצא לראשונה: ${dateTimeFmt.format(new Date(ev.firstSeen))}`)),
         el('div', { class: 'actions' },
-          el('a', { class: 'btn small', href: gcalEventLink(ev), target: '_blank', rel: 'noopener' }, '+ ליומן'),
+          el('a', { class: 'btn small add-to-cal', href: gcalEventLink(ev), target: '_blank', rel: 'noopener', 'data-title': ev.title }, '+ ליומן'),
           el('a', { class: 'btn small', href: `/api/events/${ev.id}`, target: '_blank' }, 'JSON'))));
   }
 
@@ -260,7 +265,10 @@
   }
 
   function setupTabs() {
-    document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => setView(t.dataset.view)));
+    document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => {
+      setView(t.dataset.view);
+      track('view_change', { view: t.dataset.view });
+    }));
     document.querySelectorAll('#view-week [data-step]').forEach((b) => b.addEventListener('click', () => {
       weekOffset += Number(b.dataset.step);
       renderWeek();
@@ -286,6 +294,7 @@
     for (const chip of document.querySelectorAll('.chip')) {
       chip.addEventListener('click', () => {
         category = chip.dataset.cat;
+        track('filter_category', { category: category || 'all' });
         document.querySelectorAll('.chip').forEach((c) => c.classList.toggle('active', c === chip));
         render();
       });
@@ -317,6 +326,11 @@
       document.getElementById('view-list').replaceChildren(el('p', { class: 'muted' }, 'שגיאה בטעינת האירועים. נסו לרענן.'));
     }
   }
+
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest && e.target.closest('a.add-to-cal');
+    if (a) track('add_event_to_calendar', { event_title: a.dataset.title });
+  });
 
   setupTabs();
   setupFilters();

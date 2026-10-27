@@ -16,6 +16,16 @@
     document.getElementById('webcal').href = webcal;
   }
 
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+
+  for (const [id, method] of [['gcal', 'google'], ['webcal', 'webcal'], ['copyIcs', 'copy']]) {
+    document.getElementById(id).addEventListener('click', () => track('calendar_subscribe', {
+      method, traffic_blocks: traffic.checked, category: category.value || 'all',
+    }));
+  }
+
   traffic.addEventListener('change', update);
   category.addEventListener('change', update);
   update();

@@ -25,8 +25,29 @@ const STATIC = {
   '/manifest.webmanifest': ['manifest.webmanifest', 'application/manifest+json'],
 };
 
+// Google's documented CSP allowances for GA4, added only when analytics is configured.
+const GA_SCRIPT = config.gaMeasurementId ? ' https://*.googletagmanager.com' : '';
+const GA_CONNECT = config.gaMeasurementId ? ' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com' : '';
+
+// Loads gtag.js for the configured measurement id; an empty script when analytics is off.
+const GA_JS = config.gaMeasurementId
+  ? `'use strict';
+(function () {
+  var id = ${JSON.stringify(config.gaMeasurementId)};
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', id);
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(id);
+  document.head.appendChild(s);
+})();
+`
+  : '// Analytics is not configured.\n';
+
 const SECURITY_HEADERS = {
-  'Content-Security-Policy': "default-src 'self'; img-src 'self' https: data:; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
+  'Content-Security-Policy': `default-src 'self'; img-src 'self' https: data:; style-src 'self'; script-src 'self'${GA_SCRIPT}; connect-src 'self'${GA_CONNECT}; frame-ancestors 'none'; base-uri 'none'; form-action 'none'`,
   'X-Content-Type-Options': 'nosniff',
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'X-Frame-Options': 'DENY',
@@ -131,6 +152,10 @@ function createHandler(agg) {
         if (err) return send(res, 404, 'Not found', { 'Content-Type': 'text/plain' });
         send(res, 200, buf, { 'Content-Type': type, 'Cache-Control': 'public, max-age=300' });
       });
+    }
+
+    if (p === '/ga.js') {
+      return send(res, 200, GA_JS, { 'Content-Type': 'text/javascript; charset=utf-8', 'Cache-Control': 'public, max-age=300' });
     }
 
     if (p === '/healthz') return sendJson(res, 200, { ok: true, events: agg.events.length, updatedAt: agg.updatedAt }, { 'Cache-Control': 'no-store' });

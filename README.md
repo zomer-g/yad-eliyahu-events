@@ -67,6 +67,7 @@ npm start   # http://localhost:3000
 | `REFRESH_MINUTES` | `180` | תדירות הסריקה |
 | `BASE_URL` | — | הכתובת הציבורית, לקישורים בתוך היומן |
 | `ADMIN_TOKEN` | — | אם מוגדר, מאפשר `POST /api/refresh` עם `Authorization: Bearer <token>` |
+| `GA_MEASUREMENT_ID` | — | מזהה Google Analytics 4 (`G-XXXXXXX`). בלעדיו האנליטיקס כבוי |
 
 ## פריסה
 
@@ -74,9 +75,9 @@ npm start   # http://localhost:3000
 
 ## אבטחה
 
-- אין הרשמה, אין עוגיות ואין איסוף מידע אישי.
+- אין הרשמה ואין איסוף מידע אישי. כשמוגדר `GA_MEASUREMENT_ID`, האתר טוען Google Analytics 4 למדידת שימוש אנונימית (צפיות בעמודים, מעבר בין תצוגות, הוספה ליומן). GA משתמש בעוגיות משלו.
 - כל הטקסט שמגיע ממקורות חיצוניים מנוקה מ-HTML ומוצג דרך `textContent`. קישורים מותרים רק ב-`http(s)`.
-- Content-Security-Policy קשיח (ללא סקריפטים חיצוניים או inline), `X-Frame-Options: DENY`, `nosniff`.
+- Content-Security-Policy קשיח (ללא סקריפטים inline; הסקריפט החיצוני היחיד הוא של Google Analytics, ורק כשהוא מוגדר), `X-Frame-Options: DENY`, `nosniff`.
 - הורדות מהמקורות מוגבלות בזמן (25 שניות) ובגודל (8MB).
 - נקודת הקצה היחידה שכותבת (`POST /api/refresh`) כבויה אם לא הוגדר `ADMIN_TOKEN`, וההשוואה שלה עמידה ל-timing attacks.
 
