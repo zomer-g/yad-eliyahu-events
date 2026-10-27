@@ -1,0 +1,302 @@
+{
+ "data": [
+  {
+   "id": "912eb82b-7767-4df4-b7a4-3f5be2ea0767",
+   "identifier": "E2026_373",
+   "gameCode": 373,
+   "season": {
+    "name": "EuroLeague 2026-27",
+    "code": "E2026",
+    "alias": "2026-27",
+    "competitionCode": "E",
+    "year": 2026,
+    "startDate": "2026-07-01T00:00:00"
+   },
+   "group": {
+    "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+    "order": 1,
+    "name": "Group Regular Season",
+    "rawName": "Regular Season"
+   },
+   "phaseType": {
+    "code": "RS",
+    "alias": "REGULAR SEASON",
+    "name": "Regular Season",
+    "isGroupPhase": true
+   },
+   "round": 38,
+   "roundAlias": "Round 38",
+   "roundName": "Round 38",
+   "played": false,
+   "date": "2027-04-15T20:05:00",
+   "confirmedDate": true,
+   "confirmedHour": true,
+   "localTimeZone": 2,
+   "localDate": "2027-04-15T20:05:00",
+   "utcDate": "2027-04-15T18:05:00Z",
+   "local": {
+    "club": {
+     "code": "TEL",
+     "name": "Maccabi Rapyd Tel Aviv",
+     "abbreviatedName": "Maccabi",
+     "editorialName": "Maccabi",
+     "tvCode": "MTA",
+     "isVirtual": false,
+     "images": {
+      "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+     }
+    },
+    "score": 0,
+    "standingsScore": 0,
+    "partials": {
+     "partials1": 0,
+     "partials2": 0,
+     "partials3": 0,
+     "partials4": 0,
+     "extraPeriods": {}
+    }
+   },
+   "road": {
+    "club": {
+     "code": "BAS",
+     "name": "Kosner Baskonia Vitoria-Gasteiz",
+     "abbreviatedName": "Baskonia",
+     "editorialName": "Baskonia",
+     "tvCode": "KBA",
+     "isVirtual": false,
+     "images": {
+      "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+     }
+    },
+    "score": 0,
+    "standingsScore": 0,
+    "partials": {
+     "partials1": 0,
+     "partials2": 0,
+     "partials3": 0,
+     "partials4": 0,
+     "extraPeriods": {}
+    }
+   },
+   "audience": 0,
+   "audienceConfirmed": false,
+   "socialFeed": "",
+   "operationsCode": null,
+   "referee1": null,
+   "referee2": null,
+   "referee3": null,
+   "referee4": null,
+   "venue": {
+    "name": "ALEKSANDAR NIKOLIC HALL",
+    "code": "AUF4",
+    "capacity": 8000,
+    "address": "Carlija Caplina 39, Belgrade 11000, Serbia",
+    "images": {
+     "medium": null
+    },
+    "active": true,
+    "notes": ""
+   },
+   "isNeutralVenue": false,
+   "gameStatus": "Confirmed",
+   "winner": null
+  },
+  {
+   "id": "afa9a632-d871-46f7-9726-498694209e57",
+   "identifier": "E2026_361",
+   "gameCode": 361,
+   "season": {
+    "name": "EuroLeague 2026-27",
+    "code": "E2026",
+    "alias": "2026-27",
+    "competitionCode": "E",
+    "year": 2026,
+    "startDate": "2026-07-01T00:00:00"
+   },
+   "group": {
+    "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+    "order": 1,
+    "name": "Group Regular Season",
+    "rawName": "Regular Season"
+   },
+   "phaseType": {
+    "code": "RS",
+    "alias": "REGULAR SEASON",
+    "name": "Regular Season",
+    "isGroupPhase": true
+   },
+   "round": 37,
+   "roundAlias": "Round 37",
+   "roundName": "Round 37",
+   "played": false,
+   "date": "2027-04-08T19:00:00",
+   "confirmedDate": true,
+   "confirmedHour": true,
+   "localTimeZone": 0,
+   "localDate": "2027-04-08T17:00:00",
+   "utcDate": "2027-04-08T17:00:00Z",
+   "local": {
+    "club": {
+     "code": "HTA",
+     "name": "Hapoel IBI Tel Aviv",
+     "abbreviatedName": "Hapoel TLV",
+     "editorialName": "Hapoel",
+     "tvCode": "HTA",
+     "isVirtual": false,
+     "images": {
+      "crest": "https://media-cdn.incrowdsports.com/cbb1c3ad-03d5-426a-b5ef-2832a4eee484.png"
+     }
+    },
+    "score": 0,
+    "standingsScore": 0,
+    "partials": {
+     "partials1": 0,
+     "partials2": 0,
+     "partials3": 0,
+     "partials4": 0,
+     "extraPeriods": {}
+    }
+   },
+   "road": {
+    "club": {
+     "code": "RED",
+     "name": "Crvena Zvezda Meridianbet Belgrade",
+     "abbreviatedName": "Crvena Zvezda",
+     "editorialName": "Crvena",
+     "tvCode": "CZV",
+     "isVirtual": false,
+     "images": {
+      "crest": "https://media-cdn.incrowdsports.com/d2eef4a8-62df-4fdd-9076-276004268515.png"
+     }
+    },
+    "score": 0,
+    "standingsScore": 0,
+    "partials": {
+     "partials1": 0,
+     "partials2": 0,
+     "partials3": 0,
+     "partials4": 0,
+     "extraPeriods": {}
+    }
+   },
+   "audience": 0,
+   "audienceConfirmed": false,
+   "socialFeed": null,
+   "operationsCode": null,
+   "referee1": null,
+   "referee2": null,
+   "referee3": null,
+   "referee4": null,
+   "venue": {
+    "name": "ARENA 8888 SOFIA",
+    "code": "AVK1",
+    "capacity": 12373,
+    "address": "",
+    "images": {
+     "medium": null
+    },
+    "active": true,
+    "notes": ""
+   },
+   "isNeutralVenue": false,
+   "gameStatus": "Confirmed",
+   "winner": null
+  },
+  {
+   "id": "912eb82b-7767-4df4-b7a4-3f5be2ea0767",
+   "identifier": "TEST_MENORA",
+   "gameCode": 373,
+   "season": {
+    "name": "EuroLeague 2026-27",
+    "code": "E2026",
+    "alias": "2026-27",
+    "competitionCode": "E",
+    "year": 2026,
+    "startDate": "2026-07-01T00:00:00"
+   },
+   "group": {
+    "id": "c3243224-039c-4e93-9e16-12a7f4b2d383",
+    "order": 1,
+    "name": "Group Regular Season",
+    "rawName": "Regular Season"
+   },
+   "phaseType": {
+    "code": "RS",
+    "alias": "REGULAR SEASON",
+    "name": "Regular Season",
+    "isGroupPhase": true
+   },
+   "round": 38,
+   "roundAlias": "Round 38",
+   "roundName": "Round 38",
+   "played": false,
+   "date": "2027-04-15T20:05:00",
+   "confirmedDate": true,
+   "confirmedHour": true,
+   "localTimeZone": 2,
+   "localDate": "2027-04-15T20:05:00",
+   "utcDate": "2027-04-15T18:05:00Z",
+   "local": {
+    "club": {
+     "code": "TEL",
+     "name": "Maccabi Rapyd Tel Aviv",
+     "abbreviatedName": "Maccabi",
+     "editorialName": "Maccabi",
+     "tvCode": "MTA",
+     "isVirtual": false,
+     "images": {
+      "crest": "https://media-cdn.cortextech.io/1b533342-78f5-4932-b714-a7d80b5826b5.png"
+     }
+    },
+    "score": 0,
+    "standingsScore": 0,
+    "partials": {
+     "partials1": 0,
+     "partials2": 0,
+     "partials3": 0,
+     "partials4": 0,
+     "extraPeriods": {}
+    }
+   },
+   "road": {
+    "club": {
+     "code": "BAS",
+     "name": "Kosner Baskonia Vitoria-Gasteiz",
+     "abbreviatedName": "Baskonia",
+     "editorialName": "Baskonia",
+     "tvCode": "KBA",
+     "isVirtual": false,
+     "images": {
+      "crest": "https://media-cdn.cortextech.io/cbc49cb0-99ce-4462-bdb7-56983ee03cf4.png"
+     }
+    },
+    "score": 0,
+    "standingsScore": 0,
+    "partials": {
+     "partials1": 0,
+     "partials2": 0,
+     "partials3": 0,
+     "partials4": 0,
+     "extraPeriods": {}
+    }
+   },
+   "audience": 0,
+   "audienceConfirmed": false,
+   "socialFeed": "",
+   "operationsCode": null,
+   "referee1": null,
+   "referee2": null,
+   "referee3": null,
+   "referee4": null,
+   "venue": {
+    "name": "MENORA MIVTACHIM ARENA",
+    "code": "AQO",
+    "address": "51, Igal Alon, 67062 Tel Aviv"
+   },
+   "isNeutralVenue": false,
+   "gameStatus": "Confirmed",
+   "winner": null
+  }
+ ],
+ "total": 3
+}

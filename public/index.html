@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>אירועים ביד אליהו</title>
+  <meta name="description" content="כל האירועים הצפויים בהיכל מנורה מבטחים (יד אליהו) עם הערכת עומסי תנועה, יומן לגוגל קלנדר ו-API פתוח.">
+  <meta name="theme-color" content="#0f3d5e">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <h1>אירועים ביד אליהו</h1>
+      <p class="sub">היכל מנורה מבטחים · יגאל אלון 51, תל אביב · מתי יהיה עומס באזור</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="next" class="next" aria-live="polite" hidden></section>
+
+    <section class="subscribe">
+      <h2>סנכרון ליומן</h2>
+      <p>הוסיפו את היומן לגוגל קלנדר והוא יתעדכן אוטומטית (גוגל מרעננת יומנים חיצוניים כל כמה שעות).</p>
+      <label class="check"><input type="checkbox" id="withTraffic"> לכלול גם חלונות עומס (הגעה ויציאה) כאירועים נפרדים</label>
+      <div class="buttons">
+        <a id="gcal" class="btn primary" target="_blank" rel="noopener">הוספה לגוגל קלנדר</a>
+        <button id="copyIcs" class="btn" type="button">העתקת כתובת היומן</button>
+      </div>
+      <code id="icsUrl" class="url"></code>
+    </section>
+
+    <nav class="filters" aria-label="סינון לפי סוג">
+      <button class="chip active" data-cat="">הכל</button>
+      <button class="chip" data-cat="sports">ספורט</button>
+      <button class="chip" data-cat="concert">הופעות</button>
+      <button class="chip" data-cat="show">מופעים</button>
+      <button class="chip" data-cat="conference">כנסים</button>
+    </nav>
+
+    <section id="list" class="list" aria-live="polite">
+      <p class="muted">טוען אירועים…</p>
+    </section>
+
+    <section class="sources">
+      <h2>מקורות המידע</h2>
+      <p class="muted">האירועים נאספים אוטומטית מהמקורות הבאים. שעות העומס וגודל הקהל הם הערכה לפי סוג האירוע וקיבולת ההיכל (כ-11,000).</p>
+      <ul id="sourceList"></ul>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <a href="/api">API פתוח</a> ·
+    <a href="/calendar.ics">iCal</a> ·
+    <a href="https://github.com/zomer-g/yad-eliyahu-events" target="_blank" rel="noopener">קוד מקור</a>
+    <p id="updated" class="muted"></p>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
