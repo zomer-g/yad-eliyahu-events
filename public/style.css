@@ -204,10 +204,10 @@ h2 { font-size: 1.1rem; margin: 0 0 8px; }
 }
 .card.focus { outline: 3px solid var(--brand-2); }
 .card.cancelled { border-style: dashed; }
-.card.cancelled h3 { text-decoration: line-through; }
+.card.cancelled :is(h3, h4) { text-decoration: line-through; }
 .card .time { font-weight: 700; font-size: 1.15rem; min-width: 3.2em; font-variant-numeric: tabular-nums; }
 .card .body { flex: 1; min-width: 0; }
-.card h3 { margin: 0 0 6px; font-size: 1.05rem; overflow-wrap: anywhere; }
+.card :is(h3, h4) { margin: 0 0 6px; font-size: 1.05rem; overflow-wrap: anywhere; }
 
 .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
 .badge { font-size: .78rem; padding: 2px 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); }
