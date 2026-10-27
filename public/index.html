@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <a class="skip" href="#main">דילוג לתוכן הראשי</a>
   <header class="top">
     <div class="wrap">
       <h1>אירועים ביד אליהו</h1>
@@ -18,29 +19,30 @@
     </div>
   </header>
 
-  <main class="wrap">
-    <section id="next" class="next" aria-live="polite" hidden></section>
+  <main class="wrap" id="main" tabindex="-1">
+    <section id="next" class="next" aria-label="האירוע הבא" hidden></section>
+    <p id="status" class="sr-only" role="status"></p>
 
     <div class="sticky">
-      <nav class="tabs" role="tablist" aria-label="תצוגה">
-        <button class="tab active" role="tab" data-view="list" aria-selected="true">רשימה</button>
-        <button class="tab" role="tab" data-view="week" aria-selected="false">שבוע</button>
-        <button class="tab" role="tab" data-view="month" aria-selected="false">חודש</button>
-      </nav>
-      <nav class="filters" aria-label="סינון לפי סוג">
-        <button class="chip active" data-cat="">הכל</button>
-        <button class="chip" data-cat="sports">ספורט</button>
-        <button class="chip" data-cat="concert">הופעות</button>
-        <button class="chip" data-cat="show">מופעים</button>
-        <button class="chip" data-cat="conference">כנסים</button>
-      </nav>
+      <div class="tabs" role="group" aria-label="תצוגה">
+        <button class="tab active" type="button" data-view="list" aria-pressed="true">רשימה</button>
+        <button class="tab" type="button" data-view="week" aria-pressed="false">שבוע</button>
+        <button class="tab" type="button" data-view="month" aria-pressed="false">חודש</button>
+      </div>
+      <div class="filters" role="group" aria-label="סינון לפי סוג אירוע">
+        <button class="chip active" type="button" data-cat="" aria-pressed="true">הכל</button>
+        <button class="chip" type="button" data-cat="sports" aria-pressed="false">ספורט</button>
+        <button class="chip" type="button" data-cat="concert" aria-pressed="false">הופעות</button>
+        <button class="chip" type="button" data-cat="show" aria-pressed="false">מופעים</button>
+        <button class="chip" type="button" data-cat="conference" aria-pressed="false">כנסים</button>
+      </div>
     </div>
 
-    <section id="view-list" class="list" aria-live="polite">
+    <section id="view-list" class="list" aria-label="רשימת אירועים">
       <p class="muted">טוען אירועים…</p>
     </section>
 
-    <section id="view-week" class="cal" hidden>
+    <section id="view-week" class="cal" aria-label="תצוגת שבוע" hidden>
       <div class="cal-nav">
         <button class="btn small" type="button" data-step="-1" aria-label="השבוע הקודם">→</button>
         <h2 class="cal-title"></h2>
@@ -49,14 +51,14 @@
       <div class="week-days"></div>
     </section>
 
-    <section id="view-month" class="cal" hidden>
+    <section id="view-month" class="cal" aria-label="תצוגת חודש" hidden>
       <div class="cal-nav">
         <button class="btn small" type="button" data-step="-1" aria-label="החודש הקודם">→</button>
         <h2 class="cal-title"></h2>
         <button class="btn small" type="button" data-step="1" aria-label="החודש הבא">←</button>
       </div>
-      <div class="month-grid" role="grid"></div>
-      <div class="legend">
+      <div class="month-grid"></div>
+      <div class="legend" aria-hidden="true">
         <span><i class="dot lvl-high"></i>עומס כבד</span>
         <span><i class="dot lvl-medium"></i>עומס בינוני</span>
         <span><i class="dot lvl-low"></i>עומס קל</span>
@@ -64,7 +66,7 @@
       <div class="day-detail"></div>
     </section>
 
-    <p class="cal-link"><a href="/api#calendar">📅 סנכרון לגוגל קלנדר ולאפליקציות יומן</a></p>
+    <p class="cal-link"><a href="/api#calendar"><span aria-hidden="true">📅 </span>סנכרון לגוגל קלנדר ולאפליקציות יומן</a></p>
 
     <section class="sources">
       <h2>מקורות המידע</h2>
@@ -76,7 +78,10 @@
   <footer class="wrap foot">
     <a href="/api">API פתוח וסנכרון ליומן</a> ·
     <a href="/calendar.ics">iCal</a> ·
-    <a href="https://github.com/zomer-g/yad-eliyahu-events" target="_blank" rel="noopener">קוד מקור</a>
+    <a href="https://github.com/zomer-g/yad-eliyahu-events" target="_blank" rel="noopener">קוד מקור<span class="sr-only"> (נפתח בחלון חדש)</span></a> ·
+    <a href="/accessibility">הצהרת נגישות</a> ·
+    <a href="/privacy">מדיניות פרטיות</a> ·
+    <a href="mailto:guy@z-g.co.il">יצירת קשר</a>
     <p id="updated" class="muted"></p>
   </footer>
 

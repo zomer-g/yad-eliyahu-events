@@ -104,6 +104,11 @@ test('HTTP API: events, validation, auth and security headers', async () => {
     assert.match(r.headers.get('content-type'), /text\/calendar/);
     r = await fetch(`${base}/`);
     assert.strictEqual(r.status, 200);
+    for (const page of ['/accessibility', '/privacy']) {
+      r = await fetch(`${base}${page}`);
+      assert.strictEqual(r.status, 200);
+      assert.match(await r.text(), /mailto:guy@z-g\.co\.il/);
+    }
   } finally {
     server.close();
   }

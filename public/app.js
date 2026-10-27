@@ -104,7 +104,7 @@
     return `https://calendar.google.com/calendar/render?${p}`;
   }
 
-  function card(ev, idPrefix = 'event-') {
+  function card(ev, idPrefix = 'event-', heading = 'h3') {
     const start = new Date(ev.start);
     const t = ev.traffic;
     const badges = [
@@ -114,10 +114,10 @@
       ev.postponed && el('span', { class: 'badge warn' }, 'נדחה'),
       !ev.confirmed && el('span', { class: 'badge warn' }, 'מועד לא סופי'),
     ];
-    return el('article', { class: `card${ev.cancelled ? ' cancelled' : ''}`, id: `${idPrefix}${ev.id}` },
-      el('div', { class: 'time' }, ev.timeTbd ? '?' : timeFmt.format(start)),
+    return el('article', { class: `card${ev.cancelled ? ' cancelled' : ''}`, id: `${idPrefix}${ev.id}`, tabindex: '-1' },
+      el('div', { class: 'time' }, ev.timeTbd ? [el('span', { 'aria-hidden': 'true' }, '?'), el('span', { class: 'sr-only' }, 'שעה טרם נקבעה')] : timeFmt.format(start)),
       el('div', { class: 'body' },
-        el('h3', null, ev.title),
+        el(heading, null, ev.title),
         el('div', { class: 'badges' }, badges),
         el('dl', { class: 'traffic' },
           el('dt', null, 'עומס הגעה'), el('dd', null, range(t.arrivalWindow)),
@@ -131,8 +131,8 @@
             ` · ${s.title} · ${dateTimeFmt.format(new Date(s.start))}`))),
           el('p', { class: 'muted small' }, `נמצא לראשונה: ${dateTimeFmt.format(new Date(ev.firstSeen))}`)),
         el('div', { class: 'actions' },
-          el('a', { class: 'btn small add-to-cal', href: gcalEventLink(ev), target: '_blank', rel: 'noopener', 'data-title': ev.title }, '+ ליומן'),
-          el('a', { class: 'btn small', href: `/api/events/${ev.id}`, target: '_blank' }, 'JSON'))));
+          el('a', { class: 'btn small add-to-cal', href: gcalEventLink(ev), target: '_blank', rel: 'noopener', 'data-title': ev.title, 'aria-label': `הוספת ${ev.title} לגוגל קלנדר (נפתח בחלון חדש)` }, '+ ליומן'),
+          el('a', { class: 'btn small', href: `/api/events/${ev.id}`, target: '_blank', 'aria-label': `נתוני ${ev.title} בפורמט JSON (נפתח בחלון חדש)` }, 'JSON'))));
   }
 
   function renderNext() {
@@ -150,7 +150,7 @@
       el('div', { class: 'title' }, ev.title),
       el('div', { class: 'when' }, `${rd ? `${rd}, ` : ''}${dayFmt.format(start)} · ${ev.timeTbd ? 'שעה טרם נקבעה' : timeFmt.format(start)}`),
       el('p', null, ev.traffic.advice),
-      el('a', { href: `#event-${ev.id}`, class: 'btn small' }, 'לפרטים'));
+      el('a', { href: `#event-${ev.id}`, class: 'btn small', 'aria-label': `לפרטי ${ev.title}` }, 'לפרטים'));
   }
 
   function renderList() {
@@ -187,7 +187,7 @@
       const rd = relDay(k);
       out.push(el('div', { class: `week-day${k === todayKey() ? ' today' : ''}${evs.length ? '' : ' empty'}` },
         el('h3', { class: 'week-day-title' }, `${rd ? `${rd} · ` : ''}${civilDay.format(civil(k))}`),
-        evs.length ? evs.map((e) => card(e, 'week-')) : el('p', { class: 'muted small' }, 'אין אירועים')));
+        evs.length ? evs.map((e) => card(e, 'week-', 'h4')) : el('p', { class: 'muted small' }, 'אין אירועים')));
     }
     box.querySelector('.week-days').replaceChildren(...out);
   }
@@ -202,7 +202,7 @@
     if (!key) { detail.replaceChildren(); return; }
     detail.replaceChildren(
       el('h3', { class: 'day' }, dayFmt.format(civil(key))),
-      ...(evs.length ? evs.map((e) => card(e, 'month-')) : [el('p', { class: 'muted' }, 'אין אירועים ביום הזה.')]));
+      ...(evs.length ? evs.map((e) => card(e, 'month-', 'h4')) : [el('p', { class: 'muted' }, 'אין אירועים ביום הזה.')]));
   }
 
   function renderMonth() {
@@ -212,7 +212,7 @@
     const month = firstDate.getUTCMonth();
     box.querySelector('.cal-title').textContent = civilMonth.format(firstDate);
     const days = byDay(filtered());
-    const cells = WEEKDAYS.map((d) => el('div', { class: 'month-head', role: 'columnheader' }, d));
+    const cells = WEEKDAYS.map((d) => el('div', { class: 'month-head', 'aria-hidden': 'true' }, d));
     let k = addDays(first, -firstDate.getUTCDay());
     // Default selection: today if it's in this month, otherwise the month's first event day.
     if (!selectedDay || civil(selectedDay).getUTCMonth() !== month) {
@@ -227,22 +227,33 @@
       const key = k;
       const cell = el('button', {
         type: 'button',
-        role: 'gridcell',
+        'data-day': key,
+        'aria-pressed': String(key === selectedDay),
+        'aria-current': key === todayKey() ? 'date' : null,
         class: ['month-cell', d.getUTCMonth() !== month && 'other', key === todayKey() && 'today', key === selectedDay && 'selected', level && `has lvl-${level}`].filter(Boolean).join(' '),
-        'aria-label': `${dayFmt.format(d)}: ${evs.length ? `${evs.length} אירועים` : 'אין אירועים'}`,
+        'aria-label': `${dayFmt.format(d)}: ${evs.length ? `${evs.length === 1 ? 'אירוע אחד' : `${evs.length} אירועים`}, ${LEVEL[level]}` : 'אין אירועים'}`,
       },
-      el('span', { class: 'num' }, String(d.getUTCDate())),
-      evs.length ? el('span', { class: 'items' }, evs.slice(0, 2).map((e) => el('span', { class: `item lvl-${e.traffic.level}` }, `${e.timeTbd ? '' : `${timeFmt.format(new Date(e.start))} `}${e.title}`))) : null,
-      evs.length ? el('span', { class: 'dots' }, evs.slice(0, 3).map((e) => el('i', { class: `dot lvl-${e.traffic.level}` }))) : null);
+      el('span', { class: 'num', 'aria-hidden': 'true' }, String(d.getUTCDate())),
+      evs.length ? el('span', { class: 'items', 'aria-hidden': 'true' }, evs.slice(0, 2).map((e) => el('span', { class: `item lvl-${e.traffic.level}` }, `${e.timeTbd ? '' : `${timeFmt.format(new Date(e.start))} `}${e.title}`))) : null,
+      evs.length ? el('span', { class: 'dots', 'aria-hidden': 'true' }, evs.slice(0, 3).map((e) => el('i', { class: `dot lvl-${e.traffic.level}` }))) : null);
       cell.addEventListener('click', () => {
         selectedDay = key;
         renderMonth();
+        // The grid is rebuilt, so keep keyboard focus on the chosen day.
+        const again = box.querySelector(`.month-cell[data-day="${key}"]`);
+        if (again) again.focus();
       });
       cells.push(cell);
       k = addDays(k, 1);
     }
     box.querySelector('.month-grid').replaceChildren(...cells);
     renderDayDetail(box, selectedDay, (selectedDay && days.get(selectedDay)) || []);
+  }
+
+  // Announces a short summary to screen readers after the user changes the view or filter.
+  function announce() {
+    const n = filtered().length;
+    document.getElementById('status').textContent = n ? `מוצגים ${n} אירועים` : 'אין אירועים להצגה';
   }
 
   function render() {
@@ -259,7 +270,7 @@
     document.querySelectorAll('.tab').forEach((t) => {
       const on = t.dataset.view === view;
       t.classList.toggle('active', on);
-      t.setAttribute('aria-selected', String(on));
+      t.setAttribute('aria-pressed', String(on));
     });
     render();
   }
@@ -267,6 +278,7 @@
   function setupTabs() {
     document.querySelectorAll('.tab').forEach((t) => t.addEventListener('click', () => {
       setView(t.dataset.view);
+      announce();
       track('view_change', { view: t.dataset.view });
     }));
     document.querySelectorAll('#view-week [data-step]').forEach((b) => b.addEventListener('click', () => {
@@ -283,8 +295,8 @@
   function renderSources(sources) {
     const ul = document.getElementById('sourceList');
     ul.replaceChildren(...sources.map((s) => el('li', null,
-      el('span', { class: `dot ${s.ok === false ? 'bad' : s.ok ? 'ok' : ''}` }),
-      el('a', { href: s.homepage, target: '_blank', rel: 'noopener' }, s.name),
+      el('span', { class: `dot ${s.ok === false ? 'bad' : s.ok ? 'ok' : ''}`, 'aria-hidden': 'true' }),
+      el('a', { href: s.homepage, target: '_blank', rel: 'noopener' }, s.name, el('span', { class: 'sr-only' }, ' (נפתח בחלון חדש)')),
       ` · ${s.eventCount} אירועים`,
       s.lastSuccess ? ` · עודכן ${dateTimeFmt.format(new Date(s.lastSuccess))}` : '',
       s.ok === false ? el('span', { class: 'muted small' }, ' (שגיאה בריצה האחרונה)') : '')));
@@ -295,8 +307,12 @@
       chip.addEventListener('click', () => {
         category = chip.dataset.cat;
         track('filter_category', { category: category || 'all' });
-        document.querySelectorAll('.chip').forEach((c) => c.classList.toggle('active', c === chip));
+        document.querySelectorAll('.chip').forEach((c) => {
+          c.classList.toggle('active', c === chip);
+          c.setAttribute('aria-pressed', String(c === chip));
+        });
         render();
+        announce();
       });
     }
   }
@@ -309,6 +325,7 @@
       document.querySelectorAll('.card.focus').forEach((c) => c.classList.remove('focus'));
       target.classList.add('focus');
       target.scrollIntoView({ block: 'center' });
+      target.focus({ preventScroll: true });
     }
   }
 

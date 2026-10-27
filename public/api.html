@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <a class="skip" href="#main">דילוג לתוכן הראשי</a>
   <header class="top"><div class="wrap"><h1>API ויומן</h1><p class="sub">סנכרון ליומן · API פתוח, ללא הרשמה · JSON · CORS פתוח</p></div></header>
-  <main class="wrap">
+  <main class="wrap" id="main" tabindex="-1">
     <p><a href="/">← חזרה לאירועים</a></p>
 
     <section class="subscribe" id="calendar">
@@ -26,11 +27,12 @@
         </select>
       </label>
       <div class="buttons">
-        <a id="gcal" class="btn primary" target="_blank" rel="noopener">הוספה לגוגל קלנדר</a>
+        <a id="gcal" class="btn primary" target="_blank" rel="noopener">הוספה לגוגל קלנדר<span class="sr-only"> (נפתח בחלון חדש)</span></a>
         <a id="webcal" class="btn">פתיחה באפליקציית יומן</a>
         <button id="copyIcs" class="btn" type="button">העתקת כתובת היומן</button>
       </div>
       <code id="icsUrl" class="url"></code>
+      <p id="copyStatus" class="sr-only" role="status"></p>
     </section>
 
     <section class="subscribe">
@@ -52,6 +54,9 @@
       <p>Each event includes <code>traffic.level</code> (low/medium/high), <code>traffic.expectedAttendance</code>, <code>traffic.arrivalWindow</code>, <code>traffic.departureWindow</code>, <code>confirmed</code>, <code>timeTbd</code> and the list of <code>sources</code> it was found in. Attendance and traffic windows are estimates.</p>
     </section>
   </main>
+  <footer class="wrap foot">
+    <a href="/">אירועים</a> · <a href="/accessibility">הצהרת נגישות</a> · <a href="/privacy">מדיניות פרטיות</a> · <a href="mailto:guy@z-g.co.il">יצירת קשר</a>
+  </footer>
   <script src="/ga.js"></script>
   <script src="/api.js"></script>
 </body>

@@ -34,8 +34,10 @@
     try {
       await navigator.clipboard.writeText(document.getElementById('icsUrl').textContent);
       e.target.textContent = 'הועתק ✓';
+      document.getElementById('copyStatus').textContent = 'כתובת היומן הועתקה';
     } catch (err) {
       e.target.textContent = 'העתיקו ידנית מהשורה למטה';
+      document.getElementById('copyStatus').textContent = 'ההעתקה נכשלה. העתיקו ידנית את הכתובת שמתחת לכפתורים';
     }
   });
 })();
