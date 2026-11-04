@@ -1,36 +1,4 @@
 {
-  "_comment": "Events confirmed from public announcements that the automatic sources may miss. Times are Israel local time. Each entry needs title, start and url (the announcement). Set timeTbd when the hour was not published.",
-  "events": [
-    {
-      "title": "בוי ג'ורג' · Boy George 360",
-      "start": "2026-11-04T21:00",
-      "category": "concert",
-      "attendance": 11000,
-      "description": "Live Nation Israel. במה במרכז ההיכל (360°), אורח: עברי לידר.",
-      "url": "https://www.jpost.com/israel-news/culture/article-913422"
-    },
-    {
-      "title": "ליאור נרקיס · CELEBRATION (מופע יום הולדת 50)",
-      "start": "2026-11-05T21:00",
-      "category": "concert",
-      "attendance": 11000,
-      "description": "במת 360° מרכזית. כרטיסים בטיקטמאסטר.",
-      "url": "https://www.ticketmaster.co.il/performance/MMM27/001/ALL/iw"
-    },
-    {
-      "title": "בוי ג'ורג' · We Will Dance Again (מופע לקהילת נובה)",
-      "start": "2026-11-07T21:00",
-      "timeTbd": true,
-      "category": "concert",
-      "attendance": 11000,
-      "description": "מופע שני, מוקדש לשורדי פסטיבל נובה ולמשפחות. שעת הפתיחה לא פורסמה.",
-      "url": "https://algemeiner.com/2026/10/08/boy-george-announces-second-israel-concert-dedicates-it-nova-music-festival-survivors"
-    },
-    {
-      "title": "משה פרץ",
-      "start": "2026-11-24T21:00",
-      "category": "concert",
-      "url": "https://discover.ticketmaster.co.il/event/mosheperetz/"
-    }
-  ]
+  "_comment": "Events from public announcements that no automatic source lists yet. Times are Israel local time. Each entry needs title, start (YYYY-MM-DDTHH:MM) and url (the announcement); optional: end, category (sports|concert|show|conference|other), attendance, description, timeTbd (true when the hour was not published), cancelled.",
+  "events": []
 }

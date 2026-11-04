@@ -73,6 +73,10 @@ function normalizeText(s) {
     .replace(/<[^>]*>/g, ' ')
     .replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')
+    .replace(/&#(x[0-9a-f]+|\d+);/gi, (m, n) => {
+      const code = n[0].toLowerCase() === 'x' ? parseInt(n.slice(1), 16) : parseInt(n, 10);
+      return code > 31 && code < 0x110000 && code !== 127 ? String.fromCodePoint(code) : ' ';
+    })
     .replace(/\s+/g, ' ')
     .trim();
 }

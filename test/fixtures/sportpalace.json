@@ -1,0 +1,472 @@
+{
+ "success": true,
+ "message": null,
+ "messages": null,
+ "data": {
+  "events": [
+   {
+    "id": 160,
+    "title": "מכבי ת\"א- הפועל ת\"א",
+    "start": "2026-11-01T20:55:00",
+    "editable": false,
+    "backgroundColor": "#3366cc",
+    "borderColor": "#3366cc",
+    "textColor": "#ffffff",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-160",
+     "dp-event-calendar-10",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/מכבי-ת-א-הפועל-ת-א-2",
+    "end": "2026-11-01T21:55:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 159,
+    "title": "'בוי ג'ורג",
+    "start": "2026-11-04T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-159",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/בוי-ג-ורג",
+    "end": "2026-11-04T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 161,
+    "title": "ליאור נרקיס",
+    "start": "2026-11-05T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-161",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/ליאור-נרקיס",
+    "end": "2026-11-05T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 162,
+    "title": "'בוי ג'ורג",
+    "start": "2026-11-07T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-162",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/בוי-ג-ורג-2",
+    "end": "2026-11-07T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 163,
+    "title": "אירוע סגור",
+    "start": "2026-11-10T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-163",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/אירוע-סגור-2",
+    "end": "2026-11-10T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 150,
+    "title": "מור רביעי",
+    "start": "2026-11-12T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-150",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/מור-רביעי",
+    "end": "2026-11-12T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 164,
+    "title": "מכבי ת\"א-הפועל ירושלים ",
+    "start": "2026-11-14T20:55:00",
+    "editable": false,
+    "backgroundColor": "#3366cc",
+    "borderColor": "#3366cc",
+    "textColor": "#ffffff",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-164",
+     "dp-event-calendar-10",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/מכבי-ת-א-הפועל-ירושלים",
+    "end": "2026-11-14T21:55:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 127,
+    "title": "קובי פרץ",
+    "start": "2026-11-17T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-127",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/קובי-פרץ-3",
+    "end": "2026-11-17T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 149,
+    "title": "מושיק עפיה",
+    "start": "2026-11-19T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-149",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/מושיק-עפיה-5",
+    "end": "2026-11-19T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 165,
+    "title": "מכבי ת\"א-הפועל חולון",
+    "start": "2026-11-21T20:55:00",
+    "editable": false,
+    "backgroundColor": "#3366cc",
+    "borderColor": "#3366cc",
+    "textColor": "#ffffff",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-165",
+     "dp-event-calendar-10",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/מכבי-ת-א-הפועל-חולון",
+    "end": "2026-11-21T21:55:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 178,
+    "title": "משה פרץ ",
+    "start": "2026-11-24T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-178",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/משה-פרץ",
+    "end": "2026-11-24T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 166,
+    "title": "נסרין",
+    "start": "2026-11-25T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-166",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/נסרין",
+    "end": "2026-11-25T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 136,
+    "title": "היסטריה",
+    "start": "2026-11-29T21:00:00",
+    "editable": false,
+    "backgroundColor": "#ccb833",
+    "borderColor": "#ccb833",
+    "textColor": "#000000",
+    "allDay": false,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-136",
+     "dp-event-calendar-11",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/היסטריה",
+    "end": "2026-12-03T22:00:00",
+    "resourceIds": [
+     2
+    ]
+   },
+   {
+    "id": 137,
+    "title": "היסטריה",
+    "start": "2026-11-30",
+    "editable": false,
+    "backgroundColor": "#3366cc",
+    "borderColor": "#3366cc",
+    "textColor": "#ffffff",
+    "allDay": true,
+    "description": "",
+    "location": [
+     {
+      "title": "היכל מנורה מבטחים",
+      "color": "#64459e",
+      "location": "HaShlosha, 6777517 Tel Aviv, Tel-Aviv District, Israel",
+      "latitude": "32.06204650",
+      "longitude": "34.79045450"
+     }
+    ],
+    "capacity": 0,
+    "capacity_used": 0,
+    "classNames": [
+     "dp-event",
+     "dp-event-137",
+     "dp-event-calendar-10",
+     "dp-event_booked-out"
+    ],
+    "url": "/tlv-faclities/sport-halls/menora-hall/menorah-mivtachim-hall-events-calendar/היסטריה-2",
+    "end": "2026-12-03",
+    "resourceIds": [
+     2
+    ]
+   }
+  ],
+  "location": []
+ }
+}
